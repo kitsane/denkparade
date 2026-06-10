@@ -53,12 +53,12 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="Denkparade GmbH – zur Startseite">Denkparade GmbH</a>
+      <a href="#main-content" class="logo" aria-label="Denkparade GmbH – nach oben">Denkparade GmbH</a>
       <input type="checkbox" id="nav-open" class="nav-checkbox" aria-label="Menü öffnen">
       <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
-        <a href="ueber-mich.html">Über mich</a>
-        <a href="angebot.html">Angebot</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#angebot">Angebot</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
       <label for="nav-open" class="nav-toggle" aria-hidden="true">
         <span></span><span></span><span></span>
@@ -68,6 +68,7 @@
 
   <main id="main-content">
 
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
         <p class="eyebrow">Denkparade GmbH</p>
@@ -78,8 +79,145 @@
         </p>
         <p class="hero-values">Unkompliziert&nbsp;<span>|</span>&nbsp;Wertschätzend&nbsp;<span>|</span>&nbsp;Umsetzungsstark</p>
         <div class="hero-actions">
-          <a href="kontakt.html" class="btn btn-primary">Kontakt aufnehmen</a>
-          <a href="angebot.html" class="btn btn-ghost">Mein Angebot</a>
+          <a href="#kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
+          <a href="#angebot" class="btn btn-ghost">Mein Angebot</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Über mich -->
+    <section class="about" id="ueber-mich">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="assets/claudia-portrait.jpg" alt="Porträt von Claudia Staub, Inhaberin der Denkparade GmbH" width="1067" height="1600" loading="lazy" decoding="async">
+        </div>
+        <div class="about-text">
+          <p class="eyebrow">Über mich</p>
+          <h2>Anpacken mit einem Ziel vor Augen</h2>
+          <p>
+            Ich will dazu beitragen, dass ein Vorhaben gelingt. Das Studium in Nachhaltiger
+            Entwicklung hat mir gezeigt, wie wir Zukunft denken und gestalten können.
+          </p>
+          <p>Das setze ich täglich in meinen Mandaten mit Unternehmen, Bildungsinstitutionen und NGOs um:</p>
+          <ul>
+            <li>Strategieentwicklung von der Vision zu klaren Zielen</li>
+            <li>Projektleitung von der Planung bis zur Umsetzung</li>
+            <li>Organisationsanpassung hin zu effektiven Prozessen</li>
+            <li>Einbezug der betroffenen Personen über passende Formate</li>
+          </ul>
+          <p>
+            Mich interessieren Menschen und ihre Ideen. Daher ist mir eine partnerschaftliche
+            Zusammenarbeit wichtig.
+          </p>
+          <p>
+            Sehen Sie meinen aktuellen Lebenslauf auf
+            <a class="text-link" href="https://ch.linkedin.com/in/claudia-staub-0154ab44" target="_blank" rel="noopener">LinkedIn</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Angebot -->
+    <section class="offer" id="angebot">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Mein Angebot</p>
+          <h2>Dies. Und was nicht aufgeschrieben ist natürlich auch.</h2>
+        </div>
+        <div class="offer-grid">
+          <article class="offer-card">
+            <span class="offer-number offer-number-1" aria-hidden="true">1</span>
+            <h3>Beratung</h3>
+            <p>
+              Integration von Nachhaltigkeit in Unternehmen | Soziale und ökologische Standards
+              in Lieferketten | Durchführung von Schulungen und Workshops nach didaktischen
+              Grundprinzipien
+            </p>
+          </article>
+          <article class="offer-card">
+            <span class="offer-number offer-number-2" aria-hidden="true">2</span>
+            <h3>Projektleitung</h3>
+            <p>
+              Systematische Umsetzung von der Idee bis zur Übergabe in das tägliche Geschäft |
+              Transparente Reviews auch zu kritischen Herausforderungen | Auf Augenhöhe mit den
+              Projektpartnern
+            </p>
+          </article>
+          <article class="offer-card">
+            <span class="offer-number offer-number-3" aria-hidden="true">3</span>
+            <h3>Strategieentwicklung</h3>
+            <p>
+              Klären der Vision | Analyse des IST-Standes | Entwickeln der Ziele und Massnahmen |
+              Einbindung relevanter Stakeholder | Verschriftlichung | Erstellen
+              Entscheidungsgrundlagen
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="contact" id="kontakt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Machen Sie den ersten Schritt…</h2>
+          <p class="contact-lead">
+            …ich mache den Zweiten und melde mich zurück.<br>
+            Schreiben Sie mir, was Sie sich von der Zusammenarbeit erhoffen.<br>
+            Ich freue mich auf Ihre Nachricht!
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <ul class="contact-info">
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <div>
+                <span class="contact-label">E-Mail</span>
+                <a href="mailto:claudia.staub@denkparade.ch">claudia.staub@denkparade.ch</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              </span>
+              <div>
+                <span class="contact-label">Telefon</span>
+                <a href="tel:+41796145017">+41 79 614 50 17</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <span class="contact-label">Standort</span>
+                <span>Zürich, Schweiz</span>
+              </div>
+            </li>
+          </ul>
+
+          <form class="contact-form" action="mailto:claudia.staub@denkparade.ch" method="post" enctype="text/plain">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Ihr Name" autocomplete="name" required>
+              </div>
+              <div class="form-field">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="ihre@email.ch" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" rows="6" placeholder="Wie kann ich Ihnen helfen?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Nachricht senden</button>
+            <p class="form-note">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der vorbereiteten Nachricht.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -93,5 +231,12 @@
     </div>
   </footer>
 
+  <!-- Single JS exception: anchor links don't reload the page, so the
+       CSS-only menu has to be unchecked manually after a tap. -->
+  <script>
+    document.getElementById("site-nav").addEventListener("click", function (e) {
+      if (e.target.tagName === "A") document.getElementById("nav-open").checked = false;
+    });
+  </script>
 </body>
 </html>

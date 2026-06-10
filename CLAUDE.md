@@ -5,13 +5,17 @@ strategy and sustainability projects. German-language, four pages.
 
 ## Hard constraints
 
-- **No JavaScript.** Everything works with plain HTML/CSS. The mobile menu is a
-  hidden-checkbox + label pattern, the contact form posts via
-  `mailto:` (`enctype="text/plain"`), the footer year is hardcoded. The only
-  `<script>` tag in the project is the inert JSON-LD block in `index.html`.
+- **Minimal JavaScript.** Everything works with plain HTML/CSS. The mobile menu
+  is a hidden-checkbox + label pattern, the contact form posts via
+  `mailto:` (`enctype="text/plain"`), the footer year is hardcoded. Two allowed
+  `<script>` tags in `index.html`: the inert JSON-LD block, and a 3-line inline
+  handler that unchecks the menu checkbox when a nav anchor is tapped (anchor
+  navigation doesn't reload the page, so CSS alone can't close the menu).
+  Don't add more JS.
 - **No build step.** Files are deployed exactly as they are in the repo.
-- **Separate pages, not a SPA.** Each nav item is its own HTML file; do not
-  convert to JS-driven show/hide sections.
+- **One page.** All sections live in `index.html`; the nav scrolls to anchors
+  (`#ueber-mich`, `#angebot`, `#kontakt`) via CSS `scroll-behavior: smooth`
+  (disabled under `prefers-reduced-motion`).
 - All asset/link paths are **relative**, because GitHub Pages serves the site
   under the `/denkparade/` subpath. Keep them relative.
 
@@ -19,24 +23,21 @@ strategy and sustainability projects. German-language, four pages.
 
 | File | Purpose |
 |---|---|
-| `index.html` | Hero ("Beratung. Projektleitung. Strategie.") – must fit the viewport without scrolling |
-| `ueber-mich.html` | About page with portrait |
-| `angebot.html` | Three offer cards (Beratung / Projektleitung / Strategieentwicklung) |
-| `kontakt.html` | Contact info + mailto form |
-| `styles.css` | Single stylesheet for all pages |
+| `index.html` | Whole site: hero, Über mich, Angebot (three cards), Kontakt (info + mailto form) |
+| `styles.css` | Single stylesheet |
 | `assets/claudia-portrait.jpg` | Web copy of the portrait |
-
-The header/footer markup is duplicated across all four pages (no templating) –
-when changing it, change it in **all four files**.
+| `CNAME` | Custom domain for GitHub Pages (`www.denkparade.ch`) – do not delete |
 
 ## Layout invariants
 
-- Sticky footer: `body` is a flex column with `min-height: 100svh`; `main` and
-  its single `section` stretch. The footer must always sit at the viewport
-  bottom on short pages.
-- The hero section has **no** generic section padding (`padding: 0`) so the
-  index page never scrolls on desktop viewports; its `.container` centers via
+- Sticky footer: `body` is a flex column with `min-height: 100svh`.
+- The hero has **no** generic section padding (`padding: 0`) and
+  `min-height: calc(100svh - 4rem)` so it fills exactly the first viewport
+  below the 4rem sticky header; its `.container` centers via
   `margin-block: auto`.
+- `scroll-padding-top: 5rem` on `html` keeps anchor targets clear of the
+  sticky header – keep it in sync if the header height changes.
+- Heading hierarchy: one `h1` (hero), sections are `h2`, offer cards `h3`.
 - Breakpoints: offer grid/about collapse below 56rem, burger menu below 40rem.
 
 ## Accessibility (preserve all of this)
@@ -52,9 +53,9 @@ The site targets WCAG 2.1 AA. In place and verified – don't regress:
   drawn on the visible label via `.nav-checkbox:focus-visible ~ .nav-toggle`.
   Never hide the checkbox with `display: none` – that removes it from the tab
   order.
-- **Semantics**: one `h1` per page, `aria-current="page"` on the active nav
-  link, `<nav aria-label>`, landmarks (`header`/`main`/`footer`), labeled form
-  fields with `autocomplete`, `required` for native validation.
+- **Semantics**: one `h1`, `<nav aria-label>`, landmarks
+  (`header`/`main`/`footer`), labeled form fields with `autocomplete`,
+  `required` for native validation.
 - **Screen readers**: decorative SVGs and the badge numbers are
   `aria-hidden="true"`; the portrait has descriptive German alt text.
 - **Motion**: `prefers-reduced-motion: reduce` disables smooth scrolling and

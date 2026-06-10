@@ -167,14 +167,6 @@ a {
   text-decoration: underline;
   text-underline-offset: 6px;
 }
-
-.site-nav a[aria-current="page"] {
-  color: var(--color-ink);
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
-
 /* CSS-only mobile menu: a visually hidden checkbox holds the open/closed state.
    It stays keyboard-operable (Tab + Space); the label is the visible burger. */
 .nav-checkbox {
@@ -305,7 +297,8 @@ section {
 
 .hero {
   display: flex; /* container centers itself via margin-block: auto */
-  padding: 0;    /* no generic section padding: the hero must fit the viewport without scrolling */
+  padding: 0;    /* no generic section padding: the hero fills the first viewport exactly */
+  min-height: calc(100svh - 4rem); /* viewport minus the sticky header */
   text-align: center;
 }
 
