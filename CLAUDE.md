@@ -39,6 +39,30 @@ when changing it, change it in **all four files**.
   `margin-block: auto`.
 - Breakpoints: offer grid/about collapse below 56rem, burger menu below 40rem.
 
+## Accessibility (preserve all of this)
+
+The site targets WCAG 2.1 AA. In place and verified – don't regress:
+
+- **Color contrast**: every text/background pair is ≥ 4.5:1 (lowest: muted
+  `#6b7280` on `#f8f9fb` at 4.59:1; body text on white is 7.56:1). When adding
+  colors, check contrast before using them for text.
+- **Keyboard**: skip link as first focusable element on every page; global
+  `:focus-visible` outline; the CSS-only burger menu stays keyboard-operable
+  because the hidden checkbox is focusable (Tab + Space) and its focus ring is
+  drawn on the visible label via `.nav-checkbox:focus-visible ~ .nav-toggle`.
+  Never hide the checkbox with `display: none` – that removes it from the tab
+  order.
+- **Semantics**: one `h1` per page, `aria-current="page"` on the active nav
+  link, `<nav aria-label>`, landmarks (`header`/`main`/`footer`), labeled form
+  fields with `autocomplete`, `required` for native validation.
+- **Screen readers**: decorative SVGs and the badge numbers are
+  `aria-hidden="true"`; the portrait has descriptive German alt text.
+- **Motion**: `prefers-reduced-motion: reduce` disables smooth scrolling and
+  transitions.
+- Touch targets (burger, inputs, buttons) are ≥ 44px.
+
+Language is German – keep `lang="de"` and write alt texts/labels in German.
+
 ## Design source
 
 The layout follows the mockups embedded in `Text_Webseite.docx` (git-ignored,
