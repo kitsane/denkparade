@@ -27,6 +27,7 @@ strategy and sustainability projects. German-language, four pages.
 | `index.html` | Whole site: hero, Über mich, Angebot (three cards), Kontakt (info + mailto form) |
 | `styles.css` | Single stylesheet |
 | `assets/claudia-portrait.jpg` | Web copy of the portrait |
+| `assets/favicon.svg` | "D" lettermark – the Space Grotesk Bold glyph as a static SVG path (OFL-licensed font; glyph artwork carries no obligations). PNGs are derived from it via `rsvg-convert` |
 | `CNAME` | Custom domain for GitHub Pages (`www.denkparade.ch`) – do not delete |
 
 ## Layout invariants
