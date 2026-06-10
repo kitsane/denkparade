@@ -231,12 +231,32 @@
     </div>
   </footer>
 
-  <!-- Single JS exception: anchor links don't reload the page, so the
-       CSS-only menu has to be unchecked manually after a tap. -->
+  <!-- The only JS on the site, both progressive enhancements:
+       1. close the CSS-only mobile menu after an anchor tap (no page reload happens)
+       2. scrollspy – highlight the nav link of the section in view -->
   <script>
     document.getElementById("site-nav").addEventListener("click", function (e) {
       if (e.target.tagName === "A") document.getElementById("nav-open").checked = false;
     });
+
+    var navLinks = document.querySelectorAll('#site-nav a[href^="#"]');
+    var sections = ["ueber-mich", "angebot", "kontakt"].map(function (id) {
+      return document.getElementById(id);
+    });
+    var hero = document.querySelector(".hero");
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (link) {
+          if (link.hash === "#" + entry.target.id) {
+            link.setAttribute("aria-current", "true");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" }); // a band around the viewport middle decides
+    sections.concat(hero).forEach(function (el) { spy.observe(el); });
   </script>
 </body>
 </html>

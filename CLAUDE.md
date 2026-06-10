@@ -5,13 +5,14 @@ strategy and sustainability projects. German-language, four pages.
 
 ## Hard constraints
 
-- **Minimal JavaScript.** Everything works with plain HTML/CSS. The mobile menu
-  is a hidden-checkbox + label pattern, the contact form posts via
+- **Minimal JavaScript.** Everything functional works with plain HTML/CSS. The
+  mobile menu is a hidden-checkbox + label pattern, the contact form posts via
   `mailto:` (`enctype="text/plain"`), the footer year is hardcoded. Two allowed
-  `<script>` tags in `index.html`: the inert JSON-LD block, and a 3-line inline
-  handler that unchecks the menu checkbox when a nav anchor is tapped (anchor
-  navigation doesn't reload the page, so CSS alone can't close the menu).
-  Don't add more JS.
+  `<script>` tags in `index.html`: the inert JSON-LD block, and one small
+  inline script with two progressive enhancements – closing the menu after an
+  anchor tap, and an IntersectionObserver scrollspy that sets
+  `aria-current="true"` on the nav link of the visible section. The site must
+  stay fully usable with JS disabled. Don't add more JS.
 - **No build step.** Files are deployed exactly as they are in the repo.
 - **One page.** All sections live in `index.html`; the nav scrolls to anchors
   (`#ueber-mich`, `#angebot`, `#kontakt`) via CSS `scroll-behavior: smooth`
@@ -35,8 +36,10 @@ strategy and sustainability projects. German-language, four pages.
   `min-height: calc(100svh - 4rem)` so it fills exactly the first viewport
   below the 4rem sticky header; its `.container` centers via
   `margin-block: auto`.
-- `scroll-padding-top: 5rem` on `html` keeps anchor targets clear of the
-  sticky header – keep it in sync if the header height changes.
+- `scroll-padding-top: calc(4rem + 1px)` on `html` equals the sticky header
+  height **exactly** – anchored sections land flush under the header with no
+  sliver of the previous section visible. Keep it in sync if the header height
+  changes.
 - Heading hierarchy: one `h1` (hero), sections are `h2`, offer cards `h3`.
 - Breakpoints: offer grid/about collapse below 56rem, burger menu below 40rem.
 

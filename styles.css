@@ -27,7 +27,9 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* keep anchored sections clear of the sticky header */
+  /* exactly the sticky header height (4rem + 1px border): anchored sections
+     land flush under it, with no sliver of the previous section showing */
+  scroll-padding-top: calc(4rem + 1px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -164,6 +166,14 @@ a {
 
 .site-nav a:hover {
   color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* set by the scrollspy script for the section currently in view */
+.site-nav a[aria-current="true"] {
+  color: var(--color-ink);
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 6px;
 }
