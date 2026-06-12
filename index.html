@@ -125,7 +125,7 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Mein Angebot</p>
-          <h2>Dies. Und was nicht aufgeschrieben ist natürlich auch.</h2>
+          <h2>Dies. Und Das, was nicht steht natürlich auch.</h2>
         </div>
         <div class="offer-grid">
           <article class="offer-card">
@@ -167,7 +167,7 @@
           <h2>Machen Sie den ersten Schritt…</h2>
           <p class="contact-lead">
             …ich mache den Zweiten und melde mich zurück.<br>
-            Schreiben Sie mir, was Sie sich von der Zusammenarbeit erhoffen.<br>
+            Sagen Sie mir, was Sie sich von der Zusammenarbeit erhoffen.<br>
             Ich freue mich auf Ihre Nachricht!
           </p>
         </div>
@@ -216,7 +216,7 @@
             </div>
             <div class="form-field">
               <label for="message">Nachricht</label>
-              <textarea id="message" name="message" rows="6" placeholder="Wie kann ich Ihnen helfen?" required></textarea>
+              <textarea id="message" name="message" rows="6" placeholder="Wie kann ich Sie unterstützen?" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Nachricht senden</button>
             <p class="form-note">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der vorbereiteten Nachricht.</p>
@@ -238,8 +238,8 @@
        1. close the CSS-only mobile menu after an anchor tap (no page reload happens)
        2. scrollspy – highlight the nav link of the section in view -->
   <script>
-    document.getElementById("site-nav").addEventListener("click", function (e) {
-      if (e.target.tagName === "A") document.getElementById("nav-open").checked = false;
+    document.querySelector(".site-header").addEventListener("click", function (e) {
+      if (e.target.closest("a")) document.getElementById("nav-open").checked = false;
     });
 
     var navLinks = document.querySelectorAll('#site-nav a[href^="#"]');
